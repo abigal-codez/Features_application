@@ -1,0 +1,10 @@
+#ClusterIdx	#Filename	#SpecIdx	#Scan	#ParentMass	#Charge	#RetTime	#PrecIntensity
+1	inputspectra/spec-00003.mzML	0	38	166.092	0	37.304	532612
+1	inputspectra/spec-00003.mzML	10	49	166.092	0	39.381	1.77082e+06
+1	inputspectra/spec-00003.mzML	51	94	166.091	0	47.867	58964
+1	inputspectra/spec-00003.mzML	75	120	166.09	0	52.484	17320
+1	inputspectra/spec-00011.mzML	0	38	166.095	0	37.31	684368
+1	inputspectra/spec-00011.mzML	10	49	166.095	0	39.384	1.19159e+06
+2	inputspectra/spec-00011.mzML	2516	2805	182.992	0	558.894	5116
+3	inputspectra/spec-00003.mzML	341	413	183.616	0	108.7	161068
+3	inputspectra/spec-00003.mzML	371	446	183.616	0	115.007	190988
