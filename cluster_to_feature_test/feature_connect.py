@@ -58,9 +58,9 @@ def eureka(m_file, m_ret):
 
     min_rt = orig_rt - tol_rt
     max_rt = orig_rt + tol_rt
-    print orig_rt
-    print min_rt 
-    print max_rt
+    #print orig_rt
+    #print min_rt 
+    #print max_rt
     float(min_rt)
     float(max_rt)
     sfile = open(m_file,"r")
@@ -76,7 +76,7 @@ def eureka(m_file, m_ret):
             sline = sline.split()
             sret = float(sline[0])
             if (sret > min_rt) and (sret < max_rt):
-                print "hi"
+                #print "hi"
         #hard-matching, is unlikely to work
         #if ret = sline[0]
             #take the abundance, 3rd column/index 2
@@ -101,7 +101,8 @@ def eureka(m_file, m_ret):
 rfile = str(sys.argv[1])
 count = 0
 
-ofile = rfile + "_output"
+ofile = "output.tsv"
+#ofile = rfile + "_output"
 o_f = open(ofile, 'w')
 
 #open the params.xml file for the demanglers
@@ -128,9 +129,11 @@ match = False
 with open(rfile) as f:
     for line in f:
         if count == 0:
+            line = line.rstrip()+"\tAbundances(s)\n"
             o_f.write(line)
+            print "wrote line: "+ str(line)
             #adjust count for the number of lines to read
-        if count != 0 and count < 4:
+        if count != 0: #and count < 4:
             line = line.strip()
             columns = line.split()
             #corresponds with cluster ID, filename: need to map, ret_time to be matched
@@ -138,6 +141,8 @@ with open(rfile) as f:
             filename = columns[1]
             ret = columns[6]
             
+            #cIDoutputname = "clusterID_"+str(clusterID)+".tsv"
+
             #gives leaf filename in the form spec-0000X.mzML
             filename = os.path.basename(filename)
 
@@ -160,8 +165,13 @@ with open(rfile) as f:
             if match == True:
                 eureka(sfilename,ret)
                 #eureka('feature_xml/data/test.txt',ret)
+                #remove file name, specID, scan, parent mass, charge values from list
+                #del columns[1:5]
+                #converts var columns into a string consisting of its items separated by tabs
+                columns = '\t'.join(columns)
                 #call function that does the matching of the retention time and gives the value of it
-                o_f.write(str(columns)+"\n")
+                o_f.write(columns+"\n")
+                print "wrote line: "+ str(columns)
                 #attempt at writing things into an output file
             #this part is probably prone to errors
             #match to the other name by tolerance/ use abby's code
