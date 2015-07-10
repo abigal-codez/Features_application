@@ -58,16 +58,16 @@ def xtractor(cffile):
 		next(cffile)
 		next(cffile)
 		next(cffile)
-		next(cffile)
 
 		for row in cffile:
 			row = row.strip()
 			row = row.split()
 			#rt_n -> indices (6,7,8) + 5n
 			#rt_0 = 6,7,8; rt_1 = 11,12,13
-			rt = row[11]
-			mz = row[12]
-			intens = row[13]
+			#r_11
+			rt = row[61]
+			mz = row[62]
+			intens = row[63]
 			
 
 			if rt != "nan":

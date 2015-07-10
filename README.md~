@@ -1,6 +1,6 @@
 # Features_application
 Code to allow better organization of the features files
-cf file mappings: (cf column, spec file)
+cf file mappings:
 _0 - 00003, 00009
 _1 - 00004
 _2 - 00007
