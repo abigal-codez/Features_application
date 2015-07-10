@@ -7,7 +7,8 @@ def outline():
 
     goal: evaluate if these consensus features are 
     well-determined (accurate), by considering the ms2 spectra 
-    of the species that constitute a feature, as this is a property
+    of the species / (find something besides rt and mz to sort the conensus features)
+    that constitute a feature, as this is a property
     that should be independent of rt and mz, yet distinctive to
     a species/feature
 
@@ -91,3 +92,4 @@ cluster_mapped = get_mangled_file_mapping(cluster_dict)
 feature_dict = parse_xml_file(open("feature_xml/params.xml"))
 feature_mapped = get_mangled_file_mapping(feature_dict)
 #mangling -> refers to the file names
+#spec-00001 and 00011 are identical files
